@@ -797,7 +797,7 @@ class Jetpack {
       Object.assign(trace, { missed, resolved });
     }
 
-    this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
+    // this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
 
     // Mutate serverless configuration to use our artifacts.
     functionObject.package = functionObject.package || {};
@@ -839,7 +839,7 @@ class Jetpack {
       Object.assign(trace, { missed, resolved });
     }
 
-    this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
+    // this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
 
     // Mutate serverless configuration to use our artifacts.
     servicePackage.artifact = bundleName;
@@ -857,7 +857,7 @@ class Jetpack {
     const results = await this.globAndZip({ bundleName, layerObject, worker, report });
     const { buildTime, collapsed } = results;
 
-    this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
+    // this._handleCollapsed({ collapsed, bundleName, bail: opts.collapsed.bail });
 
     // Mutate serverless configuration to use our artifacts.
     layerObject.package = layerObject.package || {};

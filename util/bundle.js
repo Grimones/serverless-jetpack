@@ -517,10 +517,10 @@ const globAndZip = async ({
       // Convert to relative paths and include in patterns for bundling.
       .map((depPath) => path.relative(servicePath, depPath));
   } else {
-    // [Dependency Mode] Iterate all dependency roots to gather production dependencies.
-    depInclude = depInclude.concat(
-      await createDepInclude({ cwd, rootPath, roots })
-    );
+    // // [Dependency Mode] Iterate all dependency roots to gather production dependencies.
+    // depInclude = depInclude.concat(
+    //   await createDepInclude({ cwd, rootPath, roots })
+    // );
   }
 
   // Normalize files / patterns for globbing and OS specifics.
@@ -542,7 +542,7 @@ const globAndZip = async ({
 
   // Detect collapsed duplicates.
   // https://github.com/FormidableLabs/serverless-jetpack/issues/109
-  const collapsed = await findCollapsed({ files: included, cwd });
+  // const collapsed = await findCollapsed({ files: included, cwd });
 
   // Create package zip.
   await bundle.createZip({
@@ -556,7 +556,7 @@ const globAndZip = async ({
     bundlePath,
     mode: traceInclude ? "trace" : "dependency",
     buildTime: new Date() - start,
-    collapsed,
+    // collapsed,
     trace: {
       misses: traceMisses
     }
